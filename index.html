@@ -234,18 +234,19 @@
       </div>
 
       <div class="col-lg-6" data-aos="fade-left">
-        <form class="card card-ghost p-3 text-light" onsubmit="event.preventDefault(); contactSubmit();">
+        <form class="card card-ghost p-3 text-light" action="https://formspree.io/f/xvglqlya"
+  method="POST" >
           <div class="mb-3">
             <label class="form-label">Name</label>
-            <input class="form-control" id="name" required>
+            <input class="form-control" name="name" id="name" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
+            <input type="email" name="email" class="form-control" id="email" required>
           </div>
           <div class="mb-3">
             <label class="form-label">Message</label>
-            <textarea class="form-control" id="message" rows="4" required></textarea>
+            <textarea class="form-control" name="message" id="message" rows="4" required></textarea>
           </div>
           <div class="d-flex justify-content-end">
             <button class="btn cta-btn" type="submit">Send message</button>
