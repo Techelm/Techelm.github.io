@@ -1,0 +1,353 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Techelm — Web & Graphic Designer Portfolio</title>
+  <meta name="description" content="Techelm | Web Developer & Graphic Designer — portfolio showcasing projects, skills, and contact.">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- AOS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+
+  <style>
+    :root{
+      --brand:#25316D; /* deep indigo */
+      --accent:#FF6B6B; /* coral */
+      --muted:#6C7A89;
+      --glass: rgba(255,255,255,0.06);
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,'Helvetica Neue',Arial; background:linear-gradient(180deg,#0f1724 0%, #071130 100%); color:#f7f9fb; -webkit-font-smoothing:antialiased;}
+    a{color:var(--accent); text-decoration:none}
+
+    /* Navbar */
+    .navbar{backdrop-filter: blur(6px); background:linear-gradient(90deg, rgba(7,17,48,0.6), rgba(10,20,40,0.4));}
+    .brand{font-weight:800; letter-spacing:0.6px}
+
+    /* Hero */
+    .hero{padding:6rem 0 4rem}
+    .hero .title{font-size:2.4rem; line-height:1.02; margin-bottom:.5rem}
+    .hero .lead{color:var(--muted); font-size:1.05rem}
+    .cta-btn{background:linear-gradient(90deg,var(--accent), #FF8A5B); border:none}
+
+    /* Cards */
+    .card-ghost{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(255,255,255,0.04);}
+
+    /* Skills */
+    .skill{display:flex; align-items:center; justify-content:space-between; gap:.75rem; padding:0.4rem 0}
+    .skill .bar{height:8px; background:rgba(255,255,255,0.06); border-radius:999px; overflow:hidden; flex:1}
+    .skill .bar > i{display:block; height:100%; background:linear-gradient(90deg,var(--brand),var(--accent));}
+
+    /* Portfolio */
+    .work-card{position:relative; overflow:hidden; border-radius:12px}
+    .work-card img{width:100%; height:220px; object-fit:cover; transition:transform .6s ease}
+    .work-card:hover img{transform:scale(1.06)}
+    .work-card .overlay{position:absolute; inset:0; display:flex; align-items:flex-end; padding:1rem; background:linear-gradient(0deg, rgba(7,9,30,0.7), transparent)}
+
+    /* Footer */
+    footer{padding:2.5rem 0; color:rgba(255,255,255,0.7)}
+
+    /* Responsive tweaks */
+    @media (max-width:768px){
+      .hero .title{font-size:1.6rem}
+      .hero{padding-top:3.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand text-white" href="#">Techelm</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"><i class="bi bi-list text-white"></i></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center">
+        <li class="nav-item"><a class="nav-link text-white" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#skills">Skills</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link text-white" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2"><a class="btn btn-sm btn-outline-light" href="#resume"><i class="bi bi-download"></i> Resume</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center gy-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h1 class="title text-white">Hi — I'm <span style="color:var(--accent)">Techelm</span><br><small class="text-muted">Web Developer & Graphic Designer</small></h1>
+        <p class="lead">I build clean, accessible websites and visual identities that help brands stand out. I blend front-end craftsmanship with graphic design thinking — from responsive UI to logo systems and brand assets.</p>
+        <div class="d-flex gap-2 mt-3">
+          <a class="btn cta-btn btn-lg text-white me-2" href="#contact">Work with me</a>
+          <a class="btn btn-outline-light btn-lg" href="#portfolio">See projects</a>
+        </div>
+        <div class="mt-4 d-flex gap-3">
+          <div class="card card-ghost p-3" style="width:12rem;">
+            <small class="text-muted">Location</small>
+            <div>Blantyre, Malawi</div>
+          </div>
+          <div class="card card-ghost p-3" style="width:12rem;">
+            <small class="text-muted">Availability</small>
+            <div>Freelance & Contract</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <div class="card card-ghost p-4">
+          <div class="d-flex align-items-center gap-3">
+            <div style="width:78px; height:78px; border-radius:14px; background:linear-gradient(135deg,var(--brand),var(--accent)); display:flex; align-items:center; justify-content:center; font-weight:700; font-size:24px">T</div>
+            <div>
+              <h5 class="mb-0">Techelm — Full-stack & Visual Designer</h5>
+              <small class="text-muted">Specializes in React, Flask, HTML/CSS, Figma</small>
+            </div>
+          </div>
+
+          <hr class="my-3" style="border-color:rgba(255,255,255,0.04)">
+
+          <p class="mb-1 text-muted small">Brief</p>
+          <p style="color:rgba(255,255,255,0.9);">I combine modern front-end tooling with brand-first design. I deliver production-ready UI, design systems and marketing assets for startups and personal brands.</p>
+
+          <div class="d-flex gap-2 mt-3">
+            <a class="btn btn-sm btn-light" href="#contact"><i class="bi bi-envelope"></i> Contact</a>
+            <a class="btn btn-sm btn-outline-light" href="#resume"><i class="bi bi-file-earmark-person"></i> Download CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT & SKILLS -->
+<section id="about" class="py-5">
+  <div class="container">
+    <div class="row g-4 align-items-center">
+      <div class="col-lg-6" data-aos="fade-up">
+        <h3>About Me</h3>
+        <p class="text-muted">I'm a web developer and graphic designer who strives to create meaningful digital experiences. Comfortable working across the stack, I enjoy turning ideas into polished interfaces and brand assets.</p>
+
+        <ul class="list-unstyled">
+          <li><strong>Experience:</strong> 3+ years building responsive sites & brand identities</li>
+          <li><strong>Tools:</strong> React, Bootstrap, Flask, Figma, Adobe CC, Git</li>
+          <li><strong>Approach:</strong> Accessibility-first, performance conscious, iterative design</li>
+        </ul>
+      </div>
+
+      <div class="col-lg-6" id="skills" data-aos="fade-up" data-aos-delay="120">
+        <h5>Technical Skills</h5>
+        <div class="card card-ghost p-3">
+          <div class="skill"><div>HTML &amp; CSS</div><div style="width:20%; text-align:right; color:var(--muted)">92%</div></div>
+          <div class="skill"><div>JavaScript &amp; React</div><div style="width:20%; text-align:right; color:var(--muted)">88%</div></div>
+          <div class="skill"><div>Design (Figma / Adobe)</div><div style="width:20%; text-align:right; color:var(--muted)">90%</div></div>
+          <div class="skill"><div>Backend (Flask / APIs)</div><div style="width:20%; text-align:right; color:var(--muted)">75%</div></div>
+
+          <div class="mt-3">
+            <small class="text-muted">Proficiency bars (visual)</small>
+            <div class="mt-2">
+              <div class="mb-2"><div class="d-flex justify-content-between"><small>HTML & CSS</small><small class="text-muted">92%</small></div><div class="bar mt-1"><i style="width:92%"></i></div></div>
+              <div class="mb-2"><div class="d-flex justify-content-between"><small>React</small><small class="text-muted">88%</small></div><div class="bar mt-1"><i style="width:88%"></i></div></div>
+              <div class="mb-2"><div class="d-flex justify-content-between"><small>Figma</small><small class="text-muted">90%</small></div><div class="bar mt-1"><i style="width:90%"></i></div></div>
+              <div class="mb-2"><div class="d-flex justify-content-between"><small>Python / Flask</small><small class="text-muted">75%</small></div><div class="bar mt-1"><i style="width:75%"></i></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio" class="py-5 bg-transparent">
+  <div class="container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h3 class="mb-0" data-aos="fade-up">Selected Projects</h3>
+      <a class="text-muted small" data-aos="fade-up" data-aos-delay="80">View all projects →</a>
+    </div>
+
+    <div class="row g-4">
+      <!-- Project 1 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">E-commerce UI</h5>
+              <small class="text-muted">React · Bootstrap · Stripe</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="60">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">Brand Identity Pack</h5>
+              <small class="text-muted">Logo · Poster · Social</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="120">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">Landing Page</h5>
+              <small class="text-muted">HTML · CSS · Performance</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="40">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">Dashboard UX</h5>
+              <small class="text-muted">Design System · Accessibility</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="80">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1515879218367-8466d910aaa4?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">Poster Series</h5>
+              <small class="text-muted">Illustration · Typography</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="col-md-6 col-lg-4" data-aos="zoom-in" data-aos-delay="120">
+        <div class="work-card card-ghost">
+          <img src="https://images.unsplash.com/photo-1532634896-26909d0d18c6?q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Project thumbnail">
+          <div class="overlay text-white">
+            <div>
+              <h5 class="mb-0">Mobile App Concept</h5>
+              <small class="text-muted">Prototyping · Motion</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-6" data-aos="fade-right">
+        <h3>Let's work together</h3>
+        <p class="text-muted">Interested in a project or need a designer-developer hybrid? Send a message and I’ll get back within 48 hours.</p>
+
+        <div class="card card-ghost p-3">
+          <p class="mb-1"><i class="bi bi-envelope"></i> hello@techelm.dev</p>
+          <p class="mb-1"><i class="bi bi-phone"></i> +265 88 000 0000</p>
+          <p class="mb-0"><i class="bi bi-geo-alt"></i> Blantyre, Malawi</p>
+        </div>
+
+        <div class="mt-3">
+          <a class="btn btn-outline-light" href="#resume">Download resume</a>
+        </div>
+      </div>
+
+      <div class="col-lg-6" data-aos="fade-left">
+        <form class="card card-ghost p-3" onsubmit="event.preventDefault(); contactSubmit();">
+          <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input class="form-control" id="name" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" required>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Message</label>
+            <textarea class="form-control" id="message" rows="4" required></textarea>
+          </div>
+          <div class="d-flex justify-content-end">
+            <button class="btn cta-btn" type="submit">Send message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESUME / CTA -->
+<section id="resume" class="py-5" data-aos="fade-up">
+  <div class="container">
+    <div class="card card-ghost p-4 d-flex flex-column flex-md-row align-items-center justify-content-between">
+      <div>
+        <h5 class="mb-1">Download my resume</h5>
+        <p class="text-muted mb-0">A one-page resume ready to attach to job or client applications.</p>
+      </div>
+      <div class="mt-3 mt-md-0">
+        <!-- Replace href with your resume file path -->
+        <a class="btn btn-light" href="#" download="Techelm_Resume.pdf"><i class="bi bi-download"></i> Download PDF</a>
+        <a class="btn btn-outline-light ms-2" href="#contact">Contact</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="mt-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <p class="mb-0">© <strong>Techelm</strong> — Web Developer & Graphic Designer</p>
+      </div>
+      <div class="col-md-6 text-md-end">
+        <a class="me-3 text-muted" href="#"><i class="bi bi-twitter"></i></a>
+        <a class="me-3 text-muted" href="#"><i class="bi bi-instagram"></i></a>
+        <a class="me-3 text-muted" href="#"><i class="bi bi-github"></i></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({duration:800, once:true});
+
+  function contactSubmit(){
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if(!name||!email||!message){alert('Please fill all fields'); return}
+    // This is a placeholder. Replace with real form handler (Netlify, Formspree, PHP endpoint, etc.)
+    alert('Thanks '+name+'! Message captured (demo). Replace contactSubmit with your backend).');
+    document.getElementById('name').value='';document.getElementById('email').value='';document.getElementById('message').value='';
+  }
+</script>
+</body>
+</html>
