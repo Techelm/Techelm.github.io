@@ -13,7 +13,7 @@
     .brand{font-weight:800; letter-spacing:0.6px}
 
     /* Hero */
-    .hero{padding:6rem 0 4rem}
+    .hero{padding:6rem 0 4rem; background: linear-gradient(rgba(2,6,23,0.7), rgba(2,6,23,0.7)), url("/images/IMG20250721160356.jpg"); background-repeat: no-repeat; background-size: cover;}
     .hero .title{font-size:2.4rem; line-height:1.02; margin-bottom:.5rem}
     .hero .lead{color:var(--muted); font-size:1.05rem}
     .cta-btn{background:linear-gradient(90deg,var(--accent), #FF8A5B); border:none}
